@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Subject and Week Selector</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="function.js">
+</head>
+<body>
+  <div class="sticky-container" id="stickyContainer">
+    <div class="header">Subject and Week Selector</div>
+    <div class="button-container">
+      <div class="button-wrapper">
+        <button id="button1">KOMFIL</button>
+        <div class="extra-buttons">
+            <button>Week 1</button>
+            <button>Week 2</button>
+            <button>Week 3</button>
+            <button>Week 4</button>
+            <button>Week 5</button>
+            <button>Week 7</button>
+            <button>Week 8</button>
+            <button>Week 9</button>
+            <button>Week 10</button>
+            <button>Week 11</button>
+            <button>Week 13</button>
+            <button>Week 14</button>
+            <button>Week 15</button>
+            <button>Week 16</button>
+        </div>
+      </div>
+      <div class="button-wrapper">
+        <button id="button2">FILDIS</button>
+        <div class="extra-buttons2">
+            <button>Week 1</button>
+            <button>Week 2</button>
+            <button>Week 3</button>
+            <button>Week 4</button>
+            <button>Week 5</button>
+            <button>Week 7</button>
+            <button>Week 8</button>
+            <button>Week 9</button>
+            <button>Week 10</button>
+            <button>Week 11</button>
+            <button>Week 13</button>
+            <button>Week 14</button>
+            <button>Week 15</button>
+            <button>Week 16</button>
+        </div>
+      </div>
+      <div class="button-wrapper">
+        <button id="button3">SOSLIT</button>
+        <div class="extra-buttons3">
+          <button>Week 1</button>
+          <button>Week 2</button>
+          <button>Week 3</button>
+          <button>Week 4</button>
+          <button>Week 5</button>
+          <button>Week 7</button>
+          <button>Week 8</button>
+          <button>Week 9</button>
+          <button>Week 10</button>
+          <button>Week 11</button>
+          <button>Week 13</button>
+          <button>Week 14</button>
+          <button>Week 15</button>
+          <button>Week 16</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <h2>Final Projects</h2>
+    <p>Here you can add your final project contents or summaries related to the subjects and weeks.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p>Scroll down to test the sticky behavior of the top bar. When you scroll down, the bar hides; scroll up slightly and it reappears.</p>
+    <p>Keep adding content here so that the page is scrollable and you can test the behavior well.</p>
+  </div>
+  <script>
+    (function () {
+      const sticky = document.getElementById("stickyContainer");
+      let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      let ticking = false;
+
+      window.addEventListener("scroll", function () {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            let currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (currentScrollTop > lastScrollTop && currentScrollTop > 10) {
+              sticky.classList.add("hidden");
+            } else {
+              sticky.classList.remove("hidden");
+            }
+            lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

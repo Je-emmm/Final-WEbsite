@@ -1,0 +1,125 @@
+
+body {
+  margin: 0;
+  height: 200vh;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.sticky-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #007bff;
+  color: white;
+  z-index: 9999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.sticky-container.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.header {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  user-select: none;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  padding: 10px 50px 20px;
+  background-color: #007bff;
+}
+
+.button-wrapper {
+  position: relative;
+  margin: 0 10px;
+}
+
+button {
+  width: 400px;
+  border-radius: 20px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-size: 1.1rem;
+  font-weight: 600;
+  user-select: none;
+}
+
+button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 6px 16px rgba(0, 86, 179, 0.6);
+}
+
+.extra-buttons,
+.extra-buttons2,
+.extra-buttons3 {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  user-select: none;
+}
+
+.button-wrapper:hover .extra-buttons,
+.button-wrapper:hover .extra-buttons2,
+.button-wrapper:hover .extra-buttons3 {
+  max-height: 1000px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.extra-buttons button,
+.extra-buttons2 button,
+.extra-buttons3 button {
+  background-color: #3987db;
+  border-radius: 15px;
+  padding: 8px;
+  margin-top: 8px;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  user-select: none;
+}
+
+.extra-buttons button:hover,
+.extra-buttons2 button:hover,
+.extra-buttons3 button:hover {
+  background-color: #007bff;
+  box-shadow: 0 3px 10px rgba(30, 126, 52, 0.6);
+}
+
+.content {
+  padding: 20px;
+  margin-top: 230px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+  color: #333;
+}
